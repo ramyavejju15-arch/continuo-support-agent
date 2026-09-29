@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Continuo — Support that remembers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+      <div class="brand">
+        <span class="brand-glyph">◒</span>
+        <div>
+          <div class="brand-name">Continuo</div>
+          <div class="brand-tag">remembers the whole story</div>
+        </div>
+      </div>
+
+      <ul class="nav-list">
+        <li><button class="nav-item active" data-view="dashboard"><span class="dot dot-indigo"></span>Dashboard</button></li>
+        <li><button class="nav-item" data-view="conversations"><span class="dot dot-coral"></span>Conversations</button></li>
+        <li><button class="nav-item" data-view="memory"><span class="dot dot-teal"></span>Memory Explorer</button></li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="footer-label">Powered by</div>
+        <div class="footer-stack">Hindsight memory · Groq inference</div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+      <!-- ================= DASHBOARD VIEW ================= -->
+      <section id="view-dashboard" class="view active">
+        <header class="view-header">
+          <h1>Dashboard</h1>
+          <p>A live look at every customer's memory bank.</p>
+        </header>
+
+        <div class="stat-row" id="statRow">
+          <div class="stat-card stat-indigo">
+            <span class="stat-value" id="statCustomers">—</span>
+            <span class="stat-label">Customers with memory</span>
+          </div>
+          <div class="stat-card stat-coral">
+            <span class="stat-value" id="statTickets">—</span>
+            <span class="stat-label">Past tickets on record</span>
+          </div>
+          <div class="stat-card stat-teal">
+            <span class="stat-value" id="statBanks">—</span>
+            <span class="stat-label">Active memory banks</span>
+          </div>
+        </div>
+
+        <h2 class="section-title">Customers</h2>
+        <div id="customerGrid" class="customer-grid"></div>
+      </section>
+
+      <!-- ================= CONVERSATIONS VIEW ================= -->
+      <section id="view-conversations" class="view">
+        <header class="view-header view-header-row">
+          <div>
+            <h1>Conversations</h1>
+            <p>Every reply is grounded in what Continuo already remembers.</p>
+          </div>
+          <div class="customer-picker">
+            <label for="customerSelect">Customer</label>
+            <select id="customerSelect"></select>
+          </div>
+        </header>
+
+        <div class="chat-layout">
+          <div class="chat-pane">
+            <div id="messages" class="messages"></div>
+            <form id="chatForm" class="composer">
+              <input id="messageInput" type="text" placeholder="Type the customer's message…" autocomplete="off" />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+
+          <aside class="memory-pane">
+            <h2>What Continuo recalls</h2>
+            <p class="memory-sub">Retrieved from this customer's memory bank before replying.</p>
+            <div id="memoryList" class="memory-list">
+              <p class="memory-empty">Send a message to see recalled memory here.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ================= MEMORY EXPLORER VIEW ================= -->
+      <section id="view-memory" class="view">
+        <header class="view-header view-header-row">
+          <div>
+            <h1>Memory Explorer</h1>
+            <p>Every memory Continuo has stored for one customer, laid out as a timeline.</p>
+          </div>
+          <div class="customer-picker">
+            <label for="explorerSelect">Customer</label>
+            <select id="explorerSelect"></select>
+          </div>
+        </header>
+
+        <div id="timeline" class="timeline">
+          <p class="memory-empty">Select a customer to load their full memory timeline.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

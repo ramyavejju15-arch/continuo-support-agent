@@ -1,0 +1,69 @@
+[
+  {
+    "id": "cust_001",
+    "name": "Priya Nandan",
+    "plan": "Pro (self-hosted)",
+    "environment": "API v2, Kubernetes, us-east-1",
+    "style": "Technical, prefers short answers, gets impatient with repeated questions",
+    "tickets": [
+      {
+        "date": "2026-07-12",
+        "issue": "API returning 401 errors intermittently after rotating keys",
+        "resolution": "Found old key cached in a sidecar container; cleared cache and restarted pods"
+      },
+      {
+        "date": "2026-08-03",
+        "issue": "Webhook deliveries delayed by 10+ minutes during peak traffic",
+        "resolution": "Recommended increasing webhook worker concurrency from 2 to 8"
+      },
+      {
+        "date": "2026-09-15",
+        "issue": "Same 401 error resurfaced after a redeploy",
+        "resolution": "Root cause was CI pipeline reusing a stale cached image; added cache-busting step"
+      }
+    ]
+  },
+  {
+    "id": "cust_002",
+    "name": "Marcus Ibe",
+    "plan": "Starter (cloud-hosted)",
+    "environment": "Dashboard only, no API usage",
+    "style": "Non-technical, needs step-by-step screenshots, very polite",
+    "tickets": [
+      {
+        "date": "2026-06-20",
+        "issue": "Could not find where to export monthly report as CSV",
+        "resolution": "Walked through Settings > Reports > Export, sent screenshots"
+      },
+      {
+        "date": "2026-09-02",
+        "issue": "Forgot how to export report again, same question",
+        "resolution": "Same steps provided; suggested bookmarking the reports page"
+      }
+    ]
+  },
+  {
+    "id": "cust_003",
+    "name": "Dana Whitfield",
+    "plan": "Enterprise",
+    "environment": "API v1 (legacy), on-prem, multiple regional accounts",
+    "style": "Formal, escalates quickly if not resolved within 24h, wants SLA references",
+    "tickets": [
+      {
+        "date": "2026-05-11",
+        "issue": "Rate limit errors across three regional accounts simultaneously",
+        "resolution": "Applied temporary limit increase, opened engineering ticket for root cause"
+      },
+      {
+        "date": "2026-07-28",
+        "issue": "Billing discrepancy between two sub-accounts",
+        "resolution": "Escalated to billing team; merged duplicate invoice records"
+      },
+      {
+        "date": "2026-09-20",
+        "issue": "Asking about migration path from API v1 to v2",
+        "resolution": "Sent migration guide, flagged as high-value account for white-glove migration support"
+      }
+    ]
+  }
+]
